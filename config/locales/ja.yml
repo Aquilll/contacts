@@ -1,0 +1,17 @@
+ja:
+  hello: 'hello'
+  form_header: "私達にメッセージを送ります"
+  name: "あなたの名前を教えてください"
+  email: "メールアドレスを入力 *"
+  phone: "電話番号を入力してください"
+  message: "メッセージ *"
+  s_message: 'メッセージを送る'
+  first_name: 'ファーストネーム'
+  last_name: '苗字'
+  email_placeholder: 'Eg. example@email.com'
+  message_placeholder: 'メッセージを書いてください'
+  address: '住所'
+  address_line: 'Mada Center 8th floor、379 Hudson St、New York、NY 10018 US'
+  lets_talk: '話しましょう'
+  support: '一般的なサポート'
+  

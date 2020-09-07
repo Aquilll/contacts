@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact V17</title>
+	<meta charset="UTF-8" http-equiv="content-type" content="application/javascript;>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+  <%= favicon_link_tag 'favicon.ico' %>
+<!--===============================================================================================-->
+  <%= stylesheet_link_tag "vendor/bootstrap/css/bootstrap.min.css" %>
+<!--===============================================================================================-->
+  <%= stylesheet_link_tag "vendor/animate/animate.css" %>
+<!--===============================================================================================-->
+  <%= stylesheet_link_tag "vendor/css-hamburgers/hamburgers.min.css" %>
+<!--===============================================================================================-->
+  <%= stylesheet_link_tag "vendor/animsition/css/animsition.min.css" %>
+<!--===============================================================================================-->
+  <%= stylesheet_link_tag "vendor/select2/select2.min.css" %>
+<!--===============================================================================================-->
+  <%= stylesheet_link_tag "vendor/daterangepicker/daterangepicker.css" %>
+<!--===============================================================================================-->
+  <%= stylesheet_link_tag "util.css" %>
+  <%= stylesheet_link_tag "main.css" %>
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" action="contacts" method="post">
+				<span class="contact100-form-title">
+					<%= t :form_header %>
+				</span>
+
+				<label class="label-input100" for="first-name"><%= t :name %></label>
+				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
+					<input id="first-name" class="input100" type="text" name="first_name" placeholder= "<%= t :first_name %>">
+					<span class="focus-input100"></span>
+				</div>
+				<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate= "Type last name">
+					<input class="input100" type="text" name="last_name" placeholder="<%= t :last_name %>">
+					<span class="focus-input100"></span>
+				</div>
+
+				<label class="label-input100" for="email"><%= t :email %></label>
+				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<input id="email" class="input100" type="text" name="email" placeholder= "<%= t :email_placeholder %>">
+					<span class="focus-input100"></span>
+				</div>
+
+				<label class="label-input100" for="phone"><%= t :phone %></label>
+				<div class="wrap-input100">
+					<input id="phone" class="input100" type="text" name="phone" placeholder="Eg. +1 800 000000">
+					<span class="focus-input100"></span>
+				</div>
+
+				<label class="label-input100" for="message"><%= t :message %></label>
+				<div class="wrap-input100 validate-input" data-validate = "Message is required">
+					<textarea id="message" class="input100" name="message" placeholder= "<%= t :message_placeholder %>"></textarea>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn">
+						<%= t :s_message %>
+					</button>
+				</div>
+			</form>
+
+			<div class="contact100-more flex-col-c-m" style="background-image: url('bg-01.jpg');">
+				<div class="flex-w size1 p-b-47">
+					<div class="txt1 p-r-25">
+						<span class="lnr lnr-map-marker"></span>
+					</div>
+
+					<div class="flex-col size2">
+						<span class="txt1 p-b-20">
+							<%= t :address %>
+						</span>
+
+						<span class="txt2">
+							<%= t :address_line %>
+						</span>
+					</div>
+				</div>
+
+				<div class="dis-flex size1 p-b-47">
+					<div class="txt1 p-r-25">
+						<span class="lnr lnr-phone-handset"></span>
+					</div>
+
+					<div class="flex-col size2">
+						<span class="txt1 p-b-20">
+							<%= t :lets_talk %>
+						</span>
+
+						<span class="txt3">
+							+1 800 1236879
+						</span>
+					</div>
+				</div>
+
+				<div class="dis-flex size1 p-b-47">
+					<div class="txt1 p-r-25">
+						<span class="lnr lnr-envelope"></span>
+					</div>
+
+					<div class="flex-col size2">
+						<span class="txt1 p-b-20">
+							<%= t :support %>
+						</span>
+
+						<span class="txt3">
+							contact@example.com
+						</span>
+
+            <span class="txt3">
+							<%= content_tag :li do%>
+                <%= link_to 'Switch to English', locale: :en%>
+              <%end unless current_page?(locale: :en)%>
+
+              <%= content_tag :li do%>
+                <%= link_to 'Switch to japanese', locale: :ja%>
+              <%end unless current_page?(locale: :ja)%>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+  <%= javascript_include_tag "vendor/jquery/jquery-3.2.1.min.js" %>
+<!--===============================================================================================-->
+  <%= javascript_include_tag "vendor/animsition/js/animsition.min.js" %>
+<!--===============================================================================================-->
+  <%= javascript_include_tag "vendor/bootstrap/js/popper.js" %>
+  <%= javascript_include_tag "vendor/bootstrap/js/bootstrap.min.js" %>
+<!--===============================================================================================-->
+  <%= javascript_include_tag "vendor/select2/select2.min.js" %>
+	<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+<!--===============================================================================================-->
+  <%= javascript_include_tag "vendor/daterangepicker/moment.min.js" %>
+  <%= javascript_include_tag "vendor/daterangepicker/daterangepicker.js" %>
+<!--===============================================================================================-->
+  <%= javascript_include_tag "vendor/countdowntime/countdowntime.js" %>
+<!--===============================================================================================-->
+  <%= javascript_include_tag "main.js" %>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+  <%= javascript_include_tag "https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" %>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-23581568-13');
+	</script>
+</body>
+</html>
