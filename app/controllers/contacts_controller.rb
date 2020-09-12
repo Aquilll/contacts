@@ -3,8 +3,11 @@
 # this is a contact controller
 class ContactsController < ApplicationController
   skip_before_action :verify_authenticity_token
+
+  # get /
   def index; end
 
+  # post /contacts
   def create
     @feed_back = Feedback.new(feedback_params)
     if @feed_back.save
@@ -15,10 +18,7 @@ class ContactsController < ApplicationController
     end
   end
 
-  def new
-    @feed_back = Feedback.new
-  end
-
+  # add strong parameters
   def feedback_params
     params.permit(:first_name, :last_name, :email, :phone, :message)
   end
